@@ -1,0 +1,22 @@
+{
+  "name": "cypress-overview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "e2e",
+    "cypress",
+    "overview"
+  ],
+  "author": "aman",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^11.5.1"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"   
+  }
+}
