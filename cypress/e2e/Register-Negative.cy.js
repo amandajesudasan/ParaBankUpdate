@@ -1,120 +1,71 @@
-describe('para bank ', function(){
+ // Register page Negative cases 
+import loginDemo from '../e2e/1-getting-started/pageobject/loginDemo.cy' // POM 
 
-it('Visit the URL', function(){
-cy.visit('https://parabank.parasoft.com/parabank/index.htm');
+it('login' ,function (){
+  const lp = new loginDemo () //lp-login page 
+  lp. Visit()
+  
 
-// register page Negative scenarios 
+cy.xpath('//*[@id="loginPanel"]/p[2]/a').click()
 
-cy.wait(2000) 
-
-  cy.xpath('//*[@id="loginPanel"]/p[2]/a').click()
-
-   // Without Enter the feild 
-
-   
-cy.wait(2000) 
-
-  cy.xpath('//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input').click()
-
-
-  // Enter the different different password & confirm password 
-
+// Enter the different different password & confirm password 
 
 cy.wait(2000) 
 
-    cy.get('input[name="customer.firstName"]')
-    .type('Alexa')
-    
-    cy.get('input[name="customer.lastName"]')
-    .type('David')
-
-    cy.get('input[name="customer.address.street"]')
-    .type('14 Greek lane ')
-
-    cy.get('input[name="customer.address.city"]')
-    .type('Los Angels')
-
-    cy.get('input[name="customer.address.state"]')
-    .type('California')
-
-    cy.get('input[name="customer.address.zipCode"]')
-    .type('1471')
-
-    cy.get('input[name="customer.phoneNumber"]')
-    .type('174632896')
-
-    cy.get('input[name="customer.ssn"]')
-    .type('1326')
-
-    cy.get('input[name="customer.username"]')
-    .type('loky')
-
-
-    cy.get('input[name="customer.password"]')
-    .type('loky')
-
-    cy.get('input[name="repeatedPassword"]')
-    .type('loky1')
-
-    cy.xpath('//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input').click()
-
-
-
-
+cy.get('input[name="customer.firstName"]')
+.type('Alexa')
+cy.get('input[name="customer.lastName"]')
+.type('David')
+cy.get('input[name="customer.address.street"]')
+.type('14 Greek lane ')
+cy.get('input[name="customer.address.city"]')
+.type('Los Angels')
+cy.get('input[name="customer.address.state"]')
+.type('California')
+cy.get('input[name="customer.address.zipCode"]')
+.type('1471')
+ cy.get('input[name="customer.phoneNumber"]')
+.type('174632896')
+ cy.get('input[name="customer.ssn"]')
+ .type('1326')
+ cy.get('input[name="customer.username"]')
+ .type('kick')
+ cy.get('input[name="customer.password"]')
+ .type('kick1')
+ cy.get('input[name="repeatedPassword"]')
+ .type('kick11')
+cy.xpath('//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input').click()
 
 cy.visit('https://parabank.parasoft.com/parabank/register.htm')
 
  // Enter the alphebetic & charcahter in the phone feild 
-cy.wait(2000) 
+
 cy.wait(1000) 
 
-    cy.get('input[name="customer.firstName"]')
-    .type('Alexa')
+cy.get('input[name="customer.firstName"]')
+.type('Alexa')
+cy.get('input[name="customer.lastName"]')
+.type('David')
+cy.get('input[name="customer.address.street"]')
+.type('14 Greek lane ')
+cy.get('input[name="customer.address.city"]')
+.type('Los Angels')
+cy.get('input[name="customer.address.state"]')
+.type('California')
+cy.get('input[name="customer.address.zipCode"]')
+.type('1471')
+cy.get('input[name="customer.phoneNumber"]') // bug // Charchter & alphebetic 
+.type('17ABC09*7')
+cy.get('input[name="customer.ssn"]')
+.type('1326')
+cy.get('input[name="customer.username"]')
+.type('nisha')
+cy.get('input[name="customer.password"]')
+.type('nisha1')
+cy.get('input[name="repeatedPassword"]')
+.type('nisha1')
+cy.xpath('//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input').click() 
 
-    cy.wait(1000) 
-    
-    cy.get('input[name="customer.lastName"]')
-    .type('David')
-
-    cy.wait(1000) 
-
-    cy.get('input[name="customer.address.street"]')
-    .type('14 Greek lane ')
-
-    cy.wait(1000) 
-
-    cy.get('input[name="customer.address.city"]')
-    .type('Los Angels')
-
-    cy.wait(1000) 
-
-    cy.get('input[name="customer.address.state"]')
-    .type('California')
-    
-    cy.wait(1000) 
-    cy.get('input[name="customer.address.zipCode"]')
-    .type('1471')
-
-    cy.get('input[name="customer.phoneNumber"]') // bug // Charchter & alphebetic 
-    .type('17ABC09*7')
-
-    cy.get('input[name="customer.ssn"]')
-    .type('1326')
-
-    cy.get('input[name="customer.username"]')
-    .type('loky')
+ });
 
 
-    cy.get('input[name="customer.password"]')
-    .type('loky')
-
-    cy.get('input[name="repeatedPassword"]')
-    .type('loky')
-
-    cy.xpath('//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input').click()
-
-
-
-  });
-
-});

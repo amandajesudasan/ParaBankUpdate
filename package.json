@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "cy:dashboard":"npx cypress run --record --key 849850b8-9568-41b6-bd76-c4ee768e94ad" 
   },
   "keywords": [
     "e2e",

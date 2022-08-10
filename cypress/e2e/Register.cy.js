@@ -1,10 +1,11 @@
-// Open new account page negative cases 
+//Register page positive cases  
 import loginDemo from '../e2e/1-getting-started/pageobject/loginDemo.cy' // POM 
 
 it('login' ,function (){
- const lp = new loginDemo () // lp-login page 
+ const lp = new loginDemo ()
  lp. Visit()
 
+ 
  cy.contains("a", "Register").click(); // Click on the Register link 
 
  cy.get('input[name="customer.firstName"]')
@@ -24,22 +25,22 @@ it('login' ,function (){
  cy.get('input[name="customer.ssn"]')
  .type('1326')
  cy.get('input[name="customer.username"]')
- .type('vani')
+ .type('Nick')
  cy.get('input[name="customer.password"]')
- .type('vani1')
+ .type('Nick1')
  cy.get('input[name="repeatedPassword"]')
- .type('vani1') 
+ .type('Nick1')
  
  cy.xpath('//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input').click() //Resgister button 
 
 
-
- 
-// Open New Account Ngative scenarios 
-cy.xpath('//*[@id="leftPanel"]/ul/li[1]/a').click() // open new account
-cy.wait(1000) 
-cy.get('select[id="type"]').select('1').should('have.value', '1') //select Savings
-cy.xpath('//*[@id="rightPanel"]/div/div/form/div/input').click() // open new account button
-cy.xpath('//*[@id="newAccountId"]').click() //click on the new account no
 });
+
+
+
+
+       
+
+
+
 

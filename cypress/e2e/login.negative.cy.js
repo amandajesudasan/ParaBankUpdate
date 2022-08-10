@@ -1,73 +1,34 @@
-describe('para bank login nehative', function(){
+// Login negative cases 
+import loginDemo from '../e2e/1-getting-started/pageobject/loginDemo.cy' // POM 
 
+describe('para bank login negative', function(){
 
-  it('Visit the URL', function(){
-
-    cy.visit('https://parabank.parasoft.com/parabank/index.htm');
-
-
-
-
-//login
+  it('login' ,function (){
+  const lp = new loginDemo ()
+  lp. Visit()
+ 
+  lp.submit() // login button 
 
 
 // Without Enter the field 
-cy.wait(1000) 
-
-//cy.get('input[name="username"]') // withoutEnter the UserName
-
-
-cy.wait(1000) 
-  
-//cy.get('input[name="password"]') //Without Enter the password 
-
 cy.xpath('//*[@id="loginPanel"]/form/div[3]/input').click() // Click on the loin button 
-
 
 // Enter Valid Username & Invalid password 
 
-cy.wait(1000) 
-
-  cy.get('input[name="username"]') // Valid Username 
-  .type('jack')
-
-  cy.wait(1000) 
-  
-  cy.get('input[name="password"]') // Valid Password 
-  .type('jack')
-
-  cy.xpath('//*[@id="loginPanel"]/form/div[3]/input').click() //Click on the login button 
+cy.get('input[name="username"]') // Valid Username 
+.type('jack')
+cy.get('input[name="password"]') // Valid Password 
+.type('jack')
+cy.xpath('//*[@id="loginPanel"]/form/div[3]/input').click() //Click on the login button 
 
 
-  // Enter invalid Username & Valid password 
+// Enter invalid Username & Valid password 
 
-  cy.get('input[name="username"]') // Valid Username 
-  .type('jack')
-
-  cy.wait(1000) 
-  
-  cy.get('input[name="password"]') // Valid Password 
-  .type('jack1')
-
-  cy.xpath('//*[@id="loginPanel"]/form/div[3]/input').click() //Click on the login button 
-
-
-
-
-
-
-
-
-
-
-
+cy.get('input[name="username"]') // Valid Username 
+.type('jack')
+cy.get('input[name="password"]') // Valid Password 
+.type('jack1')
+cy.xpath('//*[@id="loginPanel"]/form/div[3]/input').click() //Click on the login button 
 
 });
-
-
-
-
-
-
-
 });
