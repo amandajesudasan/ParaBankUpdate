@@ -26,11 +26,11 @@ it('login' ,function (){
     cy.get('input[name="customer.ssn"]')
     .type('1326')
     cy.get('input[name="customer.username"]')
-    .type('neem')
+    .type('neena')
     cy.get('input[name="customer.password"]')
-    .type('neem1')
+    .type('neena1')
     cy.get('input[name="repeatedPassword"]')
-    .type('neem1') 
+    .type('neena1') 
     
     cy.xpath('//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input').click() //Resgister button 
 
@@ -66,7 +66,7 @@ it('login' ,function (){
   cy.get('input[name="amount"]')
   .type('10000')
   cy.wait(2000)
-  cy.get('select[name="fromAccountId"]').select('14121').should('have.value', '14121') // select the bank account no 
+  cy.get('select[name="fromAccountId"]').select('47310').should('have.value', '47310') // select the bank account no 
   cy.xpath('//*[@id="rightPanel"]/div/div[1]/form/table/tbody/tr[14]/td[2]/input').click() //click the bill pay button
      
   // Find Transaction 
